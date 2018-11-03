@@ -1,0 +1,63 @@
+.page {
+  height: 100%;
+  width: 100%;
+}
+
+.mat-drawer {
+  width: 20%
+}
+
+.mat-drawer-container {
+  height: -webkit-fill-available;
+}
+
+.app-sidenav {
+  background-color: #006564;
+}
+
+.mat-list, .mat-nav-list, .mat-selection-list {
+  padding-top: 0px;
+}
+
+.firstPageContainer {
+  height: inherit;
+  background-color: #006564;
+}
+
+.previous,
+.justAdded,
+.movie,
+.tv,
+.music,
+.contact,
+.game,
+.kids,
+.maps,
+.shoppingCart,
+.next {
+  float: right;
+  background-color: #006564;
+  color: white;
+}
+
+.previous:hover,
+.justAdded:hover,
+.movie:hover,
+.tv:hover,
+.music:hover,
+.contact:hover,
+.game:hover,
+.kids:hover,
+.maps:hover,
+.shoppingCart:hover,
+.next:hover {
+  color: black;
+}
+
+.priamry--toolbar {
+  z-index: 1000;
+}
+
+.washroom--content {
+  z-index: 0
+}

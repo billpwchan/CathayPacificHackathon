@@ -1,0 +1,40 @@
+<mat-card>
+  <mat-card-content>
+    <h2 class="example-h2">Queue Status: {{queueMessage}}</h2>
+    <section class="example-section">
+      <mat-progress-bar class="example-margin" color="primary" [value]="value">
+      </mat-progress-bar>
+    </section>
+  </mat-card-content>
+  <div class="lavatoryStatus">
+    <table>
+      <tr>
+        <td *ngFor="let item of items">
+          <mat-slide-toggle class="example-margin" checked=true>
+            Lavatory {{item}}: Occupied
+          </mat-slide-toggle>
+        </td>
+      </tr>
+      <tr>
+        <td *ngIf="isOccupied">
+          <mat-slide-toggle class="example-margin" checked=true>
+            Lavatory 5: Occupied
+          </mat-slide-toggle>
+        </td>
+        <td *ngIf="!isOccupied">
+          <mat-slide-toggle class="example-margin" checked=false>
+            Lavatory 5: Available
+          </mat-slide-toggle>
+        </td>
+        <td *ngFor="let item of items2">
+          <mat-slide-toggle class="example-margin" [(checked)]="checked">
+            Lavatory {{item}}: Occupied
+          </mat-slide-toggle>
+        </td>
+      </tr>
+    </table>
+    <div class="planeImage">
+      <img [src]="imageUrl ? '../../assets/images/allOccupied.png' : '../../assets/images/oneEmpty.png'" alt="One Empty Class" class="planeImageContent">
+    </div>
+  </div>
+</mat-card>

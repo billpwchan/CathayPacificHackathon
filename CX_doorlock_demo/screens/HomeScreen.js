@@ -16,6 +16,22 @@ import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
 
+class TextinApp extends React.Component{
+  render(){
+    if (this.props.startofapp){
+      return(<Text>
+        Enter Your Row Number:
+      </Text>) 
+    }else{
+      return(<Text>
+        Wrong Row number!
+      </Text>) 
+    }
+   
+  }
+
+}
+
 export default class HomeScreen extends React.Component {
   constructor(props){
     super(props)
@@ -49,7 +65,23 @@ export default class HomeScreen extends React.Component {
 
   let middlestuff
   if (!this.state.finishinput){
-    middlestuff = <TextInput
+    middlestuff = <View><Text style={{
+      // height: 400,
+      paddingTop: 60,
+      // position: 'absolute',
+      // flex: 2,
+      // height: 250,
+      fontSize: 30,
+      color: '#fff',
+      lineHeight: 30,
+      // textAlign: 'center',
+      textAlign: 'center',
+      
+      // marginLeft: 55,
+      // marginRight: 'auto',
+      }}>
+              Input your row number
+            </Text><TextInput
     // ref="second"
     // style={this.state.pos > 0 ? styles.textInputStyle : 
     // styles.textInputNormalStyle}
@@ -63,8 +95,9 @@ export default class HomeScreen extends React.Component {
     textAlign={'center'}
     onChangeText={(text) => this.handleChange(text)
     }
-    />
-  }else{
+    /></View>
+  } else if (this.state.userinput=='66'){
+    // alert(this.state.userinput)
     middlestuff = <View style={{paddingTop: 40,}}>
 
       <Text style={{
@@ -84,10 +117,53 @@ textAlign: 'center',
 }}>
         Unlocked!
       </Text>
+
     </View>
 
 
+  }else {
+    middlestuff = <TextInput
+    // ref="second"
+    // style={this.state.pos > 0 ? styles.textInputStyle : 
+    // styles.textInputNormalStyle}
+    keyboardType = "number-pad"
+    maxLength={2}
+    // value={this.state.secondVal}
+    autoCorrect={false}
+    // onKeyPress={(event) => {this.onChange(1, event.nativeEvent.key); }}
+    style={{flex: 2,
+    // height: 250,
+    fontSize: 70,
+    color: '#fff',
+    lineHeight: 24,
+    // textAlign: 'center',
+    textAlign: 'center',}}
+    autoFocus={true}
+    textAlign={'center'}
+    onChangeText={(text) => this.handleChange(text)
+    }
+    />
+
+
   }
+
+  let viewwrapper
+  if (!this.state.finishinput||this.state.userinput=="66"){
+    viewwrapper =  <ScrollView style={{flex: 1,
+      backgroundColor: '#006564',}} contentContainerStyle={styles.contentContainer}>
+          {middlestuff}
+          </ScrollView>
+  }else{
+
+
+    viewwrapper =  <ScrollView style={{flex: 1,
+      backgroundColor: '#c2262e',}} contentContainerStyle={styles.contentContainer}>
+          {middlestuff}
+          </ScrollView>
+  }
+ 
+
+
     return (
       <View style={styles.container}>
       <Header
@@ -104,7 +180,9 @@ textAlign: 'center',
     justifyContent: 'space-around',
   }}
 />
-        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+
+{viewwrapper}
+        {/* <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}> */}
         {/* <View style={{flex: 1,textAlign: 'center'}}> */}
         {/* <TextInput
     // ref="second"
@@ -119,7 +197,7 @@ textAlign: 'center',
     autoFocus={true}
     textAlign={'center'}
     ></TextInput> */}
-    {middlestuff}
+    {/* {middlestuff} */}
     
     
     {/* </View> */}
@@ -153,7 +231,7 @@ textAlign: 'center',
               <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
             </TouchableOpacity>
           </View> */}
-        </ScrollView>
+        {/* </ScrollView> */}
 
         {/* <View style={styles.tabBarInfoContainer}>
           <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>

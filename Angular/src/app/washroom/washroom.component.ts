@@ -22,7 +22,7 @@ export class WashroomComponent implements OnInit {
   startTimer() {
     this.queueMessage = 'You are currently at position 1.';
     let queueProcess = setInterval(() => {
-      this.value = this.value + 0.35;
+      this.value = this.value + 0.15;
       if (this.value > 100) {
         this.isOccupied = false;
         this.imageUrl = false;

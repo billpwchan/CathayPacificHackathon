@@ -20,7 +20,7 @@
             <a mat-list-item class="shoppingCart"><i class="material-icons" style="float:left">shopping_cart</i>&ensp;Shop</a>
           </div>
           <div class="secondPage" *ngIf="allowSecondPage">
-            <a mat-list-item class="justAdded"><i class="material-icons" style="float:left">wc</i>&ensp;Washroom</a>
+            <a mat-list-item class="justAdded" (click)="welcomePage=false"><i class="material-icons" style="float:left">wc</i>&ensp;Washroom</a>
             <a mat-list-item class="movie"><i class="material-icons" style="float:left">fastfood</i>&ensp;Airline Meal</a>
             <a mat-list-item class="music"><i class="material-icons" style="float:left">build</i>&ensp;Under
               Development</a>
@@ -53,7 +53,8 @@
           <mat-icon class="mat-24">menu</mat-icon>
         </button>
       </mat-toolbar>
-      <app-washroom class="washroom--content"></app-washroom>
+      <app-welcome *ngIf="welcomePage"></app-welcome>
+      <app-washroom class="washroom--content" *ngIf="!welcomePage"></app-washroom>
     </mat-sidenav-content>
   </mat-sidenav-container>
 

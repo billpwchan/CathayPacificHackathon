@@ -10,6 +10,7 @@ export class AppComponent implements OnInit {
   title = 'entertainmentSystem';
   allowFirstPage = true;
   allowSecondPage = false;
+  welcomePage = true;
 
   ngOnInit(): void {
 

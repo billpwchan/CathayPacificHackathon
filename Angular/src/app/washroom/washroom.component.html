@@ -1,6 +1,8 @@
 <mat-card>
   <mat-card-content>
-    <h2 class="example-h2">Queue Status: {{queueMessage}}</h2>
+    <h2 class="queueStatus">Queue Status: {{queueMessage}}</h2>
+    <button mat-raised-button color="accent" class="makeAppointment" >Cancel Appointment</button>
+    <button mat-raised-button color="primary" class="makeAppointment" (click)="startTimer()">Make Appointment</button>
     <section class="example-section">
       <mat-progress-bar class="example-margin" color="primary" [value]="value">
       </mat-progress-bar>

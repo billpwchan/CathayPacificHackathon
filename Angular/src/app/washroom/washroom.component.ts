@@ -9,7 +9,7 @@ import { MatSnackBar } from '@angular/material';
 export class WashroomComponent implements OnInit {
 
   value = 20;
-  queueMessage = 'You are currently at position 1.';
+  queueMessage = '';
   checked = true;
   items = [1, 2, 3, 4];
   items2 = [6, 7, 8];
@@ -17,7 +17,10 @@ export class WashroomComponent implements OnInit {
   imageUrl = true;
   constructor(public snackBar: MatSnackBar) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  startTimer() {
+    this.queueMessage = 'You are currently at position 1.';
     let queueProcess = setInterval(() => {
       this.value = this.value + 0.35;
       if (this.value > 100) {

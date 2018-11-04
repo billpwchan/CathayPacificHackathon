@@ -153,3 +153,12 @@ tr {
   display: inline-block;
 }
 
+.queueStatus {
+  float: left;
+}
+
+.makeAppointment {
+  float: right;
+  margin-right: 0px;
+  margin-left: 5px;
+}

@@ -17,6 +17,7 @@ import { AlertModule } from 'ngx-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WashroomComponent } from './washroom/washroom.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 
 
@@ -25,6 +26,7 @@ import { WashroomComponent } from './washroom/washroom.component';
   declarations: [
     AppComponent,
     WashroomComponent,
+    WelcomeComponent,
   ],
   imports: [
     AlertModule.forRoot(),
